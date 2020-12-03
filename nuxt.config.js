@@ -32,6 +32,8 @@ module.exports = {
     './assets/scss/global-styles.scss'
   ],
   plugins: [
+    { src: '~~/plugins/vue-modal.js', mode: 'client' },
+    { src: '~~/plugins/vue-lazy-load.js' }
   ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
