@@ -2,7 +2,7 @@ const products = require('../static/mock/products.json')
 
 const got = require('got')
 const QS = require('querystring')
-const API_KEY = 'qmcB6IDQtX-dGfc4zXetqeHhbpKv7VSc8qRbPIy8rjI'
+const API_KEY = '5LXYI5p_sEVEv0sGd6LlNArgni3w_aoOQIB7gHOFjqA'
 
 const fs = require('fs')
 const { promisify } = require('util')
