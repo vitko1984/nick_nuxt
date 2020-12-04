@@ -24,7 +24,8 @@ module.exports = {
   serverMiddleware: [
   ],
   router: {
-    prefetchLinks: false
+      middleware: ['resetBreadscrumbs'],
+      prefetchLinks: false
   },
   loading: { color: '#ddd' },
   css: [
@@ -32,6 +33,8 @@ module.exports = {
     './assets/scss/global-styles.scss'
   ],
   plugins: [
+    { src: '~~/plugins/vue-modal.js', mode: 'client' },
+    { src: '~~/plugins/vue-lazy-load.js' }
   ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
@@ -39,7 +42,13 @@ module.exports = {
     'nuxt-trailingslash-module',
     'nuxt-webfontloader',
     'cookie-universal-nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources'/*,
+    ['nuxt-vuex-localstorage', {
+      ...(isDev && {
+        mode: 'debug'
+      }),
+      localStorage: ['cart'] //  If not entered, “localStorage” is the default value
+    }]*/
   ],
 
   webfontloader: {
