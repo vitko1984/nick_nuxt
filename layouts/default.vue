@@ -1,9 +1,26 @@
 <template>
-    <nuxt/>
+  <div>
+    <div>
+      <Header />
+    </div>
+    <div>
+      <Breadcrumbs />
+      <nuxt />
+      <CastomerCartModal />
+    </div>
+  </div>
 </template>
 
 <script>
+import Header from '~~/components/common/Header.vue'
+import Breadcrumbs from '~~/components/common/Breadcrumbs.vue'
+import CastomerCartModal from '~~/components/modals/CastomerCartModal.vue'
 export default {
+  components: {
+    Header,
+    Breadcrumbs,
+    CastomerCartModal
+  },
   computed: {
     meta () {
       return [
@@ -16,21 +33,29 @@ export default {
       ]
     }
   },
-
+  beforeCreate () {
+    // vueMainPlugins()
+  },
+  methods: {
+  },
   head () {
     const canonical = `https://mysite.com${this.$route.path
       .toLowerCase()
       .replace(/\/$/, '')}`
     return {
-      meta: [
-        ...this.meta
-
-      ],
+      meta: Array.from(this.meta),
       script: [
         // { src: 'https://markknol.github.io/console-log-viewer/console-log-viewer.js' }
       ],
+      bodyAttrs: {
+        // class: 'body'
+      },
       link: [{ rel: 'canonical', href: canonical }]
     }
   }
 }
 </script>
+<style lang="scss" module>
+.mainWrapper {
+}
+</style>
