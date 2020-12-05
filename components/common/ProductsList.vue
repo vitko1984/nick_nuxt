@@ -8,7 +8,7 @@
           :class="$style.image"
         />
       </nuxt-link>
-      <p>Price {{ product.pPrice }}</p>
+      <p>Цена {{ product.pPrice }}</p>
       <BuyButton :product="product" />
     </div>
   </div>
@@ -35,6 +35,7 @@ export default {
   flex-wrap: wrap;
   > div {
     margin: 1em;
+
   }
   p {
     max-width: 270px;
